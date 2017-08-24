@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contest>
+	<networktopology>
+		<vpcnetworks>
+			<vpcnetwork><name>net</name><cidr>192.168.0.0/16</cidr></vpcnetwork>
+		</vpcnetworks>
+		<networks>
+			<network><name>nett0</name><gateway>192.168.237.1</gateway><netmask>255.255.255.0</netmask><vpcid>net</vpcid></network>
+			<network><name>nett1</name><gateway>192.168.4.1</gateway><netmask>255.255.255.0</netmask><vpcid>net</vpcid></network>
+
+		</networks>
+		<virtualmachines>
+			<!--this is gao di area, 6 in total -->
+			<virtualmachine><name>neta</name><networkids>nett0</networkids><serviceofferingid>local1g1g</serviceofferingid><templateid>1c6c275f-3312-e890-a259-9ea6026cbe0e</templateid></virtualmachine>
+			
+			<!--t1 , 2+2 in total-->
+			<virtualmachine player="yes"><name>t1u1</name><networkids>nett1</networkids><serviceofferingid>local1g1g</serviceofferingid><templateid>db0378de-0518-11e5-b433-d8265b200480</templateid></virtualmachine>
+			<virtualmachine player="yes"><name>t1u2</name><networkids>nett1</networkids><serviceofferingid>local1g1g</serviceofferingid><templateid>5e6eef28-1398-3d1c-ef6b-793761800659</templateid></virtualmachine>
+			
+
+
+		</virtualmachines>
+	</networktopology>
+</contest>
